@@ -1,0 +1,42 @@
+.container{
+    position: relative;
+    margin: auto;
+    margin-top: 5%;
+    max-width: 770px;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.checkbox{
+    background: #f2f2f2;
+border: solid 1px grey;
+padding: 20px;
+padding-left: 10px;
+border-radius: 4px;
+}
+i{
+color: red;
+float: right;
+}
+h1{
+    padding: 5%;
+    text-align: center;
+}
+i:hover::after {
+    color: rgb(0, 26, 255);
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 20%; top: 30%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 15px; /* Размер текста подсказки */
+    padding: 5px 10px; /* Поля */
+    border: 1px solid #333; /* Параметры рамки */
+}
+.hovered{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0, .5);
+    transition: .5s all;
+    z-index: 100;
+}

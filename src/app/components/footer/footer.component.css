@@ -1,0 +1,14 @@
+footer{
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 2%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+a{
+    color: rgb(0, 4, 255);
+}
+a :hover{
+    color: red;
+}

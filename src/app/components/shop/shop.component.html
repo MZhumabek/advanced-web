@@ -1,0 +1,73 @@
+<div class="shop">
+  <h1 class="display-4">Shop</h1>
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <form (submit)="addDog()">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Dog</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$20 <small class="text-muted">/ 1 ex</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><img src="assets\images\cat_food.png"></li>
+            </ul>
+            <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+          </div>
+        </form>
+    </div>
+          <div class="card mb-4 shadow-sm">
+            <form (submit)="addDogFood()">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Dog food</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$4 <small class="text-muted">/ 1 ex</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><img src="assets\images\cat_food.png"></li>
+                </ul>
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+              </div>
+            </form>
+        </div>
+          <div class="card mb-4 shadow-sm">
+            <form (submit)="addCat()">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Cat</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$18 <small class="text-muted">/ 1 ex</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><img src="assets\images\cat_food.png"></li>
+                </ul>
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+              </div>
+            </form>
+        </div>
+      <div class="card mb-4 shadow-sm">
+          <form (submit)="addCatFood()">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Cat food</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">$5 <small class="text-muted">/ 1 ex</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li><img src="assets/images/cat_food.png"></li>
+              </ul>
+              <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+            </div>
+          </form>
+      </div>
+        <div class="cart">  
+          <form *ngIf=show>
+               <app-order [items] = "items"></app-order> 
+               <h1>Total: {{ sum }}$</h1>
+               <h6>{{toDate | date | uppercase}}</h6>
+               <a src="https://www.paypal.com/ru/home"><button type="submit" class="btn btn-lg btn-block btn-success" (click)="buy()">Buy!</button></a>
+            </form>
+          </div>
+            <button type="button" class="btn btn-lg btn-block btn-danger" (click)="show=!show">Show cart</button>
+    </div>
+  </div>
+  
+
+
