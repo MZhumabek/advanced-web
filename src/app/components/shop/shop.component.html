@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="shop">
   <h1 class="display-4">Shop</h1>
     <div class="card-deck mb-3 text-center">
@@ -7,11 +9,11 @@
             <h4 class="my-0 font-weight-normal">Dog</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$20 <small class="text-muted">/ 1 ex</small></h1>
+            <h1 class="card-title pricing-card-title">$20</h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li><img src="assets\images\cat_food.png"></li>
+              <li><img src="assets\images\dog.jpg"></li>
             </ul>
-            <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+            <button type="submit" class="btn btn-lg btn-block btn-primary">Add</button>
           </div>
         </form>
     </div>
@@ -21,11 +23,11 @@
                 <h4 class="my-0 font-weight-normal">Dog food</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title">$4 <small class="text-muted">/ 1 ex</small></h1>
+                <h1 class="card-title pricing-card-title">$4</h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li><img src="assets\images\cat_food.png"></li>
+                  <li><img src="assets\images\food.jpg"></li>
                 </ul>
-                <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Add</button>
               </div>
             </form>
         </div>
@@ -35,11 +37,11 @@
                 <h4 class="my-0 font-weight-normal">Cat</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title">$18 <small class="text-muted">/ 1 ex</small></h1>
+                <h1 class="card-title pricing-card-title">$18</h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li><img src="assets\images\cat_food.png"></li>
+                  <li><img src="assets\images\cat.jpg"></li>
                 </ul>
-                <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Add</button>
               </div>
             </form>
         </div>
@@ -49,16 +51,17 @@
               <h4 class="my-0 font-weight-normal">Cat food</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$5 <small class="text-muted">/ 1 ex</small></h1>
+              <h1 class="card-title pricing-card-title">$5</h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li><img src="assets/images/cat_food.png"></li>
               </ul>
-              <button type="submit" class="btn btn-lg btn-block btn-primary">Add to cart</button>
+              <button type="submit" class="btn btn-lg btn-block btn-primary">Add</button>
             </div>
           </form>
       </div>
         <div class="cart">  
           <form *ngIf=show>
+              <button type="reset" class="i"><i class="fa fa-close" (click)="show=!show"></i></button>
                <app-order [items] = "items"></app-order> 
                <h1>Total: {{ sum }}$</h1>
                <h6>{{toDate | date | uppercase}}</h6>

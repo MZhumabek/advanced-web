@@ -50,7 +50,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked{
     return false;
   };
   addCat() {
-    this.items.push("Cat Food, Price 18$");
+    this.items.push("Cat, Price 18$");
     this.sum=this.sum + 18;
     return false;
   };

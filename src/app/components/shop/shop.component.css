@@ -32,4 +32,9 @@ h6{
     max-width: 300px;
     margin: auto;
 }
-
+.i{
+    float: right;
+    position: absolute;
+    left: 90%;
+    z-index: 1000;
+}
