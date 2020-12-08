@@ -13,13 +13,21 @@ import { ShopComponent } from './components/shop/shop.component';
 import { OrderComponent } from './components/shop/order/order.component';
 import {TempConverterPipe} from "./components/pipes/temp-converter.pipe";
 import {HoverDirective} from "./components/shop/order/hover.directive";
-  import { from } from 'rxjs';
+import { ProductService } from './service/product.service';
+import { LoggingService } from './service/logging.service';
+import { DatachangeguardGuard } from './auth/datachangeguard.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes:Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'shop', component:ShopComponent},
+  {path: 'home', component:HomeComponent},
+  {path: 'shop', 
+  component:ShopComponent,
+  canActivate: [AuthGuard]},
   {path: 'about', component:AboutComponent},
-  {path: 'contact', component:ContactComponent}
+  {path: 'contact', 
+  component:ContactComponent,
+  canDeactivate: [DatachangeguardGuard]},
+  {path: '', redirectTo:'home', pathMatch:'full'},
 ]
 
 @NgModule({
@@ -40,7 +48,7 @@ const appRoutes:Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ ProductService, LoggingService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

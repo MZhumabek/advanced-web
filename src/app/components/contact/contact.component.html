@@ -4,7 +4,7 @@
       <h2>Contact</h2>
     </div>
       <div class="column">
-        <form (submit)="addItem(item.value)">
+        <form (submit)="addItem(item.value)" #contactForm="ngForm">
           <label for="fname">First Name</label>
           <p style="color: green; font-size: large;"><input type="text" id="fname" name="firstname" placeholder="Your name.." [(ngModel)]="firstname"/>
           {{firstname | tempConverter:'F'}}</p>
@@ -13,7 +13,7 @@
           {{lastname | tempConverter:'L'}}</p>
           <label for="subject">Subject</label>
           <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" #item></textarea>
-          <button type="submit">Send</button>
+          <button type="submit" [disabled]=!contactForm.form.valid>Send</button>
         </form>
       </div>
       <div class="checkbox" *ngFor="let item of items">

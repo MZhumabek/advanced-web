@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,14 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   items:string[];
   firstname:string;
   lastname:string;
+  @ViewChild("contactForm")
+  private dataForm: NgForm;
+
   constructor() { }
+
+  public hasUnsavedData():boolean{
+    return this.dataForm.dirty;
+  }
 
   ngOnInit(){
     this.items=[];
