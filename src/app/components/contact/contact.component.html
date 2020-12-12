@@ -6,19 +6,18 @@
       <div class="column">
         <form (submit)="addItem(item.value)" #contactForm="ngForm">
           <label for="fname">First Name</label>
-          <p style="color: green; font-size: large;"><input type="text" id="fname" name="firstname" placeholder="Your name.." [(ngModel)]="firstname"/>
-          {{firstname | tempConverter:'F'}}</p>
+          <p style="color: green; font-size: large;"><input #spy required #firstName="ngModel" type="text" id="fname" name="firstname" placeholder="Your name.." [(ngModel)]="firstname"/>
+         {{ spy.className }}</p>
+         <div class="alert alert-danger" [hidden]="firstName.valid || firstName.pristine">
+          field "first name" must be filled!"
+        </div>  
           <label for="lname">Last Name</label>
-          <p style="color: green; font-size: large;"><input type="text" id="lname" name="lastname" placeholder="Your last name.." [(ngModel)]="lastname"/>
-          {{lastname | tempConverter:'L'}}</p>
+          <input required [formControl]="nameControl" type="text" id="lname" name="lastname"/> 
           <label for="subject">Subject</label>
           <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" #item></textarea>
           <button type="submit" [disabled]=!contactForm.form.valid>Send</button>
         </form>
       </div>
-      <div class="checkbox" *ngFor="let item of items">
-        {{item}}<i class="fa fa-question"></i><br>
-      </div> 
   </div>
 </div>
  

@@ -1,0 +1,20 @@
+{ 
+    "productList":
+    [{
+        "id": 1,
+        "name": "Dog",
+        "cost": 20
+    },{
+        "id": 2,
+        "name": "Dog food",
+        "age": 4
+    },{
+        "id": 3,
+        "name": "Cat",
+        "age": 18
+    },{
+        "id": 4,
+        "name": "Cat food",
+        "age": 5
+    }]
+}

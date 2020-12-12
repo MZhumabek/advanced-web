@@ -1,5 +1,7 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
+import { HttpService } from 'src/app/http.service';
+import { Product } from 'src/app/product';
 
 @Component({
   selector: 'app-shop',

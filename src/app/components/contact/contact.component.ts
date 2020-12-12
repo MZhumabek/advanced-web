@@ -1,5 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +11,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   items:string[];
   firstname:string;
   lastname:string;
+  nameControl:FormControl;
   @ViewChild("contactForm")
   private dataForm: NgForm;
 
@@ -22,6 +23,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
 
   ngOnInit(){
     this.items=[];
+    this.nameControl= new FormControl('Kohn',[Validators.required, Validators.minLength(3)]);
     console.log("ngOnInit in contact works!");
   }
   ngOnDestroy(){
@@ -45,6 +47,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   ngAfterViewChecked(){
     console.log("ngAfterViewChecked in contact works!");
   }
+
   addItem(item) {
     this.items.push(item);
     return false;
